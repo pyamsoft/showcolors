@@ -1,6 +1,6 @@
 #!/bin/bash
-
 T=   # The test text
+
 if [ -z $1 ]; then
     T='gYw'
 else
