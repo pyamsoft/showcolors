@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 T=   # The test text
 
 if [ -z $1 ]; then
@@ -7,7 +7,7 @@ else
     T=$1
 fi
 
-echo 
+echo
 
 for I in $(seq 1 $(expr 14 + ${#T}));
     do echo -n " "
