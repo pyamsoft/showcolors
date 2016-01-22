@@ -1,16 +1,30 @@
-#!/usr/bin/env sh
+#!/bin/sh
+#
+#  Copyright (C) 2016 Peter Kenji Yamanaka
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License along
+#  with this program; if not, write to the Free Software Foundation, Inc.,
+#  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
 
-set -eu
-set -o pipefail
-
-function print_spaces()
+print_spaces()
 {
         for I in $(seq 1 $(expr 14 + ${#t})); do
                 printf " "
         done
 }
 
-function print_padded_labels()
+print_padded_labels()
 {
         for num in 40m 41m 42m 43m 44m 45m 46m 47m; do
                 printf "%s" "${num}"
@@ -20,7 +34,7 @@ function print_padded_labels()
         done
 }
 
-function print_colors()
+print_colors()
 {
         echo
         for fgcs in '    m' '   1m' '  30m' '1;30m' '  31m' '1;31m' '  32m' \
@@ -37,7 +51,7 @@ function print_colors()
         done
 }
 
-function main()
+main()
 {
         local t=   # The test text
         if [ $# -eq 0 ]; then
