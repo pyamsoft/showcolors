@@ -19,16 +19,17 @@
 
 main()
 {
-        local c=
-        for i in $(seq 0 9); do
-                c=$(tr -cd "0-9a-f" < /dev/urandom | fold -bw 6 | sed 1q)
-                printf "*color%d:  #%s\n" "$i" "$c"
-        done
-        for i in $(seq 10 15); do
-                c=$(tr -cd "0-9a-f" < /dev/urandom | fold -bw 6 | sed 1q)
-                printf "*color%d: #%s\n" "$i" "$c"
-        done
-        unset c
+  local c=
+  for i in $(seq 0 9); do
+    c=$(tr -cd "0-9a-f" < /dev/urandom | fold -bw 6 | sed 1q)
+    printf "*color%d:  #%s\n" "$i" "$c"
+  done
+
+  for i in $(seq 10 15); do
+    c=$(tr -cd "0-9a-f" < /dev/urandom | fold -bw 6 | sed 1q)
+    printf "*color%d: #%s\n" "$i" "$c"
+  done
+  unset c
 }
 
 main
