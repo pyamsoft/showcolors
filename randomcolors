@@ -19,7 +19,7 @@
 
 main()
 {
-  local c=
+  c=
   for i in $(seq 0 9); do
     c=$(tr -cd "0-9a-f" < /dev/urandom | fold -bw 6 | sed 1q)
     printf "*color%d:  #%s\n" "$i" "$c"
